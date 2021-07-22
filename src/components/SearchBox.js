@@ -24,7 +24,7 @@ const SearchBox = () => {
         <div className="search-box">
             <div className="logo"></div>
             <div className="search-inputs">
-                <input value={search} type="text" placeholder="Search.." onChange={(e) => { 
+                <input className="input" value={search} type="text" placeholder="Search.." onChange={(e) => { 
                     setSearch(e.target.value);
                 }}/>
                 {search.length !== 0 && (
@@ -47,7 +47,10 @@ const SearchBox = () => {
                 </div>
             )}
             </div>
-        <LocationContainer id={onClick}/>
+            <div className="second-container">
+            <LocationContainer id={onClick}/>
+            </div>
+       
         </div>
     )
 }

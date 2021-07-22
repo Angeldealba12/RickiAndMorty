@@ -30,9 +30,11 @@ const LocationContainer = ( {id} ) => {
     
     
       return (
-        <div className="App">
+        <div className="location">
           {locationInfo && <LocationInfo name={locationInfo.name} type={locationInfo.type} dimension={locationInfo.dimension}/>}
-            {list} 
+          <div className="resident-container">
+            {list}
+         </div>  
         </div>
       );
     }

@@ -1,13 +1,13 @@
 import './App.css';
-import LocationContainer from './components/LocationContainer'
 import SearchBox from './components/SearchBox';
 
 function App() {
 
   return (
     <div className="App">
+      <div className="child-container">
         <SearchBox />
-        <LocationContainer />
+      </div>
     </div>
   );
 }

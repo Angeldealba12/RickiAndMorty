@@ -1,11 +1,11 @@
 
 const ResidentInfo = ( { name, status, origin, img } ) => {
     return (
-        <div>
-             {name}
-            {status}
+        <div className="resident-info">
+             <p>{name}</p>
+            <p>{status}</p>
             <img src={img} alt={name} />
-            {origin}
+            <p>{origin}</p>
         </div>
     )
 }

@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.child-container{
+  background-image: url(img/background.jpg);
+  height: 200vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-box{
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+}
+
+.search-inputs{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+}
+
+.search-box .logo{
+  background-image: url(https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png);
+  width: 50%;
+  height: 10rem;
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat
+}
+
+.input {
+  margin-top: 20px;
+  width: 14rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  padding-left: 10px;
+  border-radius: 2rem;
+  border: 0;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.dataResult {
+  width: 12rem;
+  height: 5rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 0rem 0rem 1rem 1rem;  
+}
+
+.dataResult::-webkit-scrollbar{
+  display: none;
+}
+
+.dataResult .dataItem {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.dataItem p{
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+
+.dataResult .dataItem:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.locationInfo{
   color: white;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.resident-container{
+  display: flex;
+  width: 80vw;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.resident-info{
+  border: 1px solid black;
+  margin-top: 5px;
+  color: black;
+  background-color: #fff;
+}
+
+.resident-info img{
+  width: 12rem;
+}
+
+@media (max-width: 1000px) {
+
+  .resident-container{
+    display: flex;
+    width: 80vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
   }
-  to {
-    transform: rotate(360deg);
+
+  .child-container{
+    background-image: url(img/background.jpg);
+    height: 550vh;
   }
+
+  .search-box .logo{
+    width: 80%;
+    height: 10rem;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  .locationInfo{
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
 }
