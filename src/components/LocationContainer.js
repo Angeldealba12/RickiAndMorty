@@ -15,7 +15,6 @@ const LocationContainer = ( {id} ) => {
             const logic = async () => {
                 const res = await fetch(`https://rickandmortyapi.com/api/location/${encodeURI(id)}`)
                 .then(response => response.json());
-                console.log(res)
 
                 setLocationInfo(res)
                 setResidentUrl(res.residents)
