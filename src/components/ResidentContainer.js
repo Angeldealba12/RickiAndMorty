@@ -1,7 +1,7 @@
- import { useEffect, useState } from 'react'
- import ResidentInfo from './ResidentInfo';
+import { useEffect, useState } from 'react'
+import ResidentInfo from './ResidentInfo';
 
-const ResidentContainer = ({url}) => {
+const ResidentContainer = ({ url }) => {
 
     const [name, setName] = useState('')
     const [status, setStatus] = useState('')
@@ -17,13 +17,13 @@ const ResidentContainer = ({url}) => {
             setOrigin(res.origin.name);
             setImg(res.image);
         }
-        
+
         logic();
     }, [url])
 
     return (
         <div>
-           <ResidentInfo name={name} status={status} img={img} origin={origin}/>
+            <ResidentInfo name={name} status={status} img={img} origin={origin} />
         </div>
     )
 }

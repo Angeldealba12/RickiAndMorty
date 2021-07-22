@@ -1,36 +1,38 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&family=IM+Fell+DW+Pica+SC&family=Righteous&display=swap");
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Amaranth", sans-serif;
 }
 
-
-.child-container{
+.child-container {
   background-image: url(img/background.jpg);
   height: 200vh;
 }
 
-.search-box{
+.search-box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.search-inputs{
+.search-inputs {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.search-box .logo{
+.search-box .logo {
   background-image: url(https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png);
   width: 50%;
   height: 10rem;
   background-position: center;
   background-size: 70%;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
 }
 
 .input {
@@ -54,10 +56,10 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
-  border-radius: 0rem 0rem 1rem 1rem;  
+  border-radius: 0rem 0rem 1rem 1rem;
 }
 
-.dataResult::-webkit-scrollbar{
+.dataResult::-webkit-scrollbar {
   display: none;
 }
 
@@ -68,7 +70,7 @@
   align-items: center;
 }
 
-.dataItem p{
+.dataItem p {
   color: black;
   text-align: center;
   width: 100%;
@@ -79,58 +81,74 @@
   cursor: pointer;
 }
 
-.locationInfo{
+.locationInfo {
   color: white;
   margin-top: 3rem;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-around;
   font-size: 2rem;
+  text-shadow: 4px 4px 2px rgba(126, 204, 62, 1);
 }
 
-.resident-container{
+.resident-container {
   display: flex;
   width: 80vw;
   flex-wrap: wrap;
   justify-content: space-between;
-  border: 1px solid black;
 }
 
-.resident-info{
-  border: 1px solid black;
-  margin-top: 5px;
+.resident-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 2rem;
   color: black;
-  background-color: #fff;
+  border-radius: 1rem 0 1rem 0;
+  height: 15rem;
+  width: 12rem;
+  background-position: center;
+  background-size: cover;
+  -webkit-box-shadow: -1px 0px 13px 7px rgba(161, 202, 76, 1);
+  -moz-box-shadow: -1px 0px 13px 7px rgba(161, 202, 76, 1);
+  box-shadow: -1px 0px 13px 7px rgba(161, 202, 76, 1);
 }
 
-.resident-info img{
-  width: 12rem;
+.resident-info p {
+  width: 50%;
+  height: 1.5rem;
+  padding-left: 10px;
+  background-color: #a1ca4c;
+  margin: 0.2rem;
+  border-bottom: 4px solid #00b0c7;
+  font-size: 1rem;
+  overflow: hidden;
+  border-radius: 0 0 10px 0px;
 }
 
 @media (max-width: 1000px) {
-
-  .resident-container{
+  .resident-container {
     display: flex;
-    width: 80vw;
+    width: 95vw;
     flex-wrap: wrap;
-    justify-content: center;
-    border: 1px solid black;
+    justify-content: space-around;
   }
 
-  .child-container{
+  .child-container {
     background-image: url(img/background.jpg);
     height: 550vh;
   }
 
-  .search-box .logo{
+  .search-box .logo {
     width: 80%;
     height: 10rem;
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
   }
-  
-  .locationInfo{
+
+  .locationInfo {
     color: white;
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -139,5 +157,10 @@
     font-size: 1.2rem;
     text-align: center;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .resident-info {
+    width: 15rem;
+  }
 }

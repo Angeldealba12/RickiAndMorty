@@ -1,10 +1,9 @@
 
-const ResidentInfo = ( { name, status, origin, img } ) => {
+const ResidentInfo = ({ name, status, origin, img }) => {
     return (
-        <div className="resident-info">
-             <p>{name}</p>
+        <div style={{ backgroundImage: `url(${img})` }} className="resident-info">
+            <p>{name}</p>
             <p>{status}</p>
-            <img src={img} alt={name} />
             <p>{origin}</p>
         </div>
     )

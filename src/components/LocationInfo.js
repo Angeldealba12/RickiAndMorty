@@ -1,4 +1,4 @@
-const LocationInfo = ( {name, type, dimension} ) => {
+const LocationInfo = ({ name, type, dimension }) => {
     return (
         <div className="locationInfo">
             <p>{name}</p>
@@ -6,7 +6,7 @@ const LocationInfo = ( {name, type, dimension} ) => {
             <p>{dimension}</p>
         </div>
     )
-} 
+}
 
 export default LocationInfo;
 
