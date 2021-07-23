@@ -9,64 +9,36 @@ const SearchBox = () => {
 
     useEffect(() => {
 
-        const mainData = [];
+        const myArrayData = [];
 
-        const myFunc = async () => {
-            const res1 = await fetch('https://rickandmortyapi.com/api/location')
-                .then((Response) => Response.json())
-            const data1 = res1.results;
+        const myAPis = [
+            'https://rickandmortyapi.com/api/location',
+            'https://rickandmortyapi.com/api/location?page=2',
+            'https://rickandmortyapi.com/api/location?page=3',
+            'https://rickandmortyapi.com/api/location?page=4',
+            'https://rickandmortyapi.com/api/location?page=5',
+            'https://rickandmortyapi.com/api/location?page=6'
+        ]
 
-            const res2 = await fetch('https://rickandmortyapi.com/api/location?page=2')
-                .then((Response) => Response.json())
-            const data2 = res2.results;
+        myAPis.forEach((element) => {
+            const myFunc = async () => {
+                const res = await fetch(element)
+                    .then((response) => response.json())
 
-            const res3 = await fetch('https://rickandmortyapi.com/api/location?page=3')
-                .then((Response) => Response.json())
-            const data3 = res3.results;
 
-            const res4 = await fetch('https://rickandmortyapi.com/api/location?page=4')
-                .then((Response) => Response.json())
-            const data4 = res4.results;
+                const myData = res.results
 
-            const res5 = await fetch('https://rickandmortyapi.com/api/location?page=5')
-                .then((Response) => Response.json())
-            const data5 = res5.results;
+                myData.forEach((e) => {
+                    return myArrayData.push(e)
+                })
+                setData(myArrayData)
+            }
+            myFunc()
+        })
 
-            const res6 = await fetch('https://rickandmortyapi.com/api/location?page=6')
-                .then((Response) => Response.json())
-            const data6 = res6.results;
-
-            data1.forEach(element => {
-                return mainData.push(element)
-            });
-
-            data2.forEach(element => {
-                return mainData.push(element)
-            })
-
-            data3.forEach(element => {
-                return mainData.push(element)
-            })
-
-            data4.forEach(element => {
-                return mainData.push(element)
-            })
-
-            data5.forEach(element => {
-                return mainData.push(element)
-            })
-
-            data6.forEach(element => {
-                return mainData.push(element)
-            })
-
-            setData(mainData)
-
-        }
-
-        myFunc()
     }, [])
 
+    
 
     return (
         <div className="search-box">
