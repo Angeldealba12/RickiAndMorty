@@ -7,7 +7,7 @@ const LocationContainer = ({ id }) => {
 
     const [locationInfo, setLocationInfo] = useState(null);
     const [residentUrl, setResidentUrl] = useState([])
-    const [idRandom] = useState(Math.floor(Math.random()*20));
+    const [idRandom] = useState(Math.floor(Math.random()*108));
     const [noResidents, setNoResidents] = useState();
 
     useEffect(() => {
@@ -22,6 +22,7 @@ const LocationContainer = ({ id }) => {
                 setLocationInfo(res)
                 setResidentUrl(res.residents)
                 
+                
             }
             
             logic();
@@ -35,7 +36,7 @@ const LocationContainer = ({ id }) => {
                 setLocationInfo(res)
                 if( res.residents.length === 0 ){
                     setNoResidents(<div className="noResidents">
-                        <p>Oh! Sorry, but this location has no residents</p>
+                        <p>Oh, Sorry! but this location has no residents</p>
                     </div>)
                 }else{
                     setResidentUrl(res.residents)
