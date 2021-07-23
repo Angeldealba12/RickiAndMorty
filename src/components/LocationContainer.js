@@ -8,6 +8,7 @@ const LocationContainer = ({ id }) => {
     const [locationInfo, setLocationInfo] = useState(null);
     const [residentUrl, setResidentUrl] = useState([])
     const [idRandom] = useState(Math.floor(Math.random()*20));
+    const [noResidents, setNoResidents] = useState();
 
     useEffect(() => {
 
@@ -24,17 +25,22 @@ const LocationContainer = ({ id }) => {
             }
             
             logic();
-        }else if(idRandom){
+
+        }else if (idRandom) {
             const logic = async () => {
                 const res = await fetch(`https://rickandmortyapi.com/api/location/${encodeURI(idRandom)}`)
                     .then(response => response.json());
 
                   
                 setLocationInfo(res)
-                setResidentUrl(res.residents)
-                
-                
-            }
+                if( res.residents.length === 0 ){
+                    setNoResidents(<div className="noResidents">
+                        <p>Oh! Sorry, but this location has no residents</p>
+                    </div>)
+                }else{
+                    setResidentUrl(res.residents)
+                }
+                  }
             logic()
         }
 
@@ -49,6 +55,7 @@ const LocationContainer = ({ id }) => {
             {locationInfo && <LocationInfo name={locationInfo.name} type={locationInfo.type} dimension={locationInfo.dimension} />}
             <div className="resident-container">
                 {list}
+                {noResidents}
             </div>
         </div>
     );

@@ -127,6 +127,21 @@
   border-radius: 0 0 10px 0px;
 }
 
+.noResidents {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  text-shadow: -3px -1px 2px rgba(255, 85, 71, 1);
+}
+
+.noResidents p{
+  background-color: black;
+  border-radius: 1rem 0 1rem 0;
+  padding: 0.5rem;
+}
+
 @media (max-width: 1000px) {
   .resident-container {
     display: flex;
@@ -162,5 +177,15 @@
 @media (max-width: 768px) {
   .resident-info {
     width: 15rem;
+  }
+  .noResidents p{
+    background-color: black;
+    font-size: 1.5rem;
+    border-radius: 1rem 0 1rem 0;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .noResidents {
+    width: 80%;
   }
 }
